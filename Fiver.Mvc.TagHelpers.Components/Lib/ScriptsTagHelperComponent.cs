@@ -9,7 +9,7 @@ namespace Fiver.Mvc.TagHelpers.Components.Lib
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            if (string.Equals(context.TagName, "head", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(context.TagName, "body", StringComparison.OrdinalIgnoreCase))
             {
                 output.PostContent.AppendHtml($"<script src='js/jquery.min.js'></script> \r\n");
                 output.PostContent.AppendHtml($"<script src='js/site.js'></script> \r\n");
