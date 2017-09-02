@@ -1,4 +1,5 @@
 ﻿using Fiver.Mvc.TagHelpers.Components.Lib;
+using Fiver.Mvc.TagHelpers.Components.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -11,9 +12,11 @@ namespace Fiver.Mvc.TagHelpers.Components
         public void ConfigureServices(
             IServiceCollection services)
         {
+            services.AddSingleton<IMetaService, MetaService>();
+
             services.AddSingleton<ITagHelperComponent, MetaTagHelperComponent>();
-            services.AddSingleton<ITagHelperComponent, ScriptsTagHelperComponent>();
             services.AddSingleton<ITagHelperComponent, FooterTagHelperComponent>();
+            services.AddSingleton<ITagHelperComponent, ScriptsTagHelperComponent>();
 
             services.AddMvc();
         }

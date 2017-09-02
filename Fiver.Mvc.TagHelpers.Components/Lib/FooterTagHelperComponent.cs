@@ -12,7 +12,7 @@ namespace Fiver.Mvc.TagHelpers.Components.Lib
             if (string.Equals(context.TagName, "footer", StringComparison.OrdinalIgnoreCase))
             {
                 output.PostContent.AppendHtml(
-                    string.Format($"<p>{DateTime.Now.ToString()}</p>"));
+                    string.Format($"<p><em>{DateTime.Now.ToString()}</em></p>"));
             }
         }
     }
